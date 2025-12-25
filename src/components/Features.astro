@@ -1,28 +1,32 @@
 ---
 import FeatureCard from './FeatureCard.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const features = [
   {
-    title: 'Precision AI Matching',
-    description: 'Our proprietary algorithms scan thousands of roles to find the 1% that actually match your skills, values, and salary expectations.',
+    title: t('feature.matching.title'),
+    description: t('feature.matching.desc'),
     icon: '<svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>',
     delay: '0.1'
   },
   {
-    title: 'Dynamic Resume Tuning',
-    description: 'Automatically tailor your resume for every single application. Optimized for ATS while maintaining your professional voice.',
+    title: t('feature.resume.title'),
+    description: t('feature.resume.desc'),
     icon: '<svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>',
     delay: '0.2'
   },
   {
-    title: 'Smart Referral Network',
-    description: 'Unlock "hidden" jobs. Our Agent identifies colleagues and alumni at target companies and drafts perfect referral requests.',
+    title: t('feature.referral.title'),
+    description: t('feature.referral.desc'),
     icon: '<svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>',
     delay: '0.3'
   },
   {
-    title: '24/7 Career Agent',
-    description: 'Never feel alone in the process. Ask your AI agent anything from "How should I answer this question?" to "Is this salary offer fair?".',
+    title: t('feature.agent.title'),
+    description: t('feature.agent.desc'),
     icon: '<svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>',
     delay: '0.4'
   }
@@ -32,12 +36,12 @@ const features = [
 <section id="features" class="py-24 bg-gray-50 dark:bg-[#050505] transition-colors relative">
   <div class="container mx-auto px-6">
     <div class="max-w-3xl mb-16">
-      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Core Capabilities</h2>
+      <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">{t('features.badge')}</h2>
       <p class="text-4xl md:text-5xl font-black tracking-tight mb-6">
-        Everything you need to bypass <span class="text-gray-400">the black hole.</span>
+        {t('features.title.1')} <span class="text-gray-400">{t('features.title.2')}</span>
       </p>
       <p class="text-lg text-gray-600 dark:text-gray-400">
-        Job searching is broken. We built the tools to fix it, focusing on speed, precision, and human-AI collaboration.
+        {t('features.subtitle')}
       </p>
     </div>
 

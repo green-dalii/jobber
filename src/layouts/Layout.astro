@@ -1,15 +1,19 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
+
 interface Props {
 	title: string;
 	description?: string;
 }
 
 const { title, description = "Next-gen AI Job Search platform with Agent guidance." } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+
 import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />

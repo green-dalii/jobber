@@ -1,4 +1,8 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="py-12 border-t border-white/10 bg-white dark:bg-[#050505] transition-colors relative h-full">
@@ -12,7 +16,7 @@
           <span class="font-bold text-xl tracking-tight">Jobber.ai</span>
         </a>
         <p class="text-gray-600 dark:text-gray-400 max-w-sm mb-6">
-          Empowering the next generation of talent with AI-driven career guidance and precision job matching.
+          {t('footer.tagline')}
         </p>
         <div class="flex gap-4">
           <!-- Social Icons Placeholder -->
@@ -26,17 +30,17 @@
       </div>
       
       <div>
-        <h4 class="font-bold mb-6">Product</h4>
+        <h4 class="font-bold mb-6">{t('footer.product')}</h4>
         <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="#features" class="hover:text-primary transition-colors">Features</a></li>
+          <li><a href="#features" class="hover:text-primary transition-colors">{t('nav.features')}</a></li>
           <li><a href="#" class="hover:text-primary transition-colors">Integrations</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Pricing</a></li>
+          <li><a href="#" class="hover:text-primary transition-colors">{t('nav.pricing')}</a></li>
           <li><a href="#" class="hover:text-primary transition-colors">Changelog</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-bold mb-6">Company</h4>
+        <h4 class="font-bold mb-6">{t('footer.company')}</h4>
         <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
           <li><a href="#" class="hover:text-primary transition-colors">About Us</a></li>
           <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
@@ -47,7 +51,7 @@
     </div>
 
     <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-      <p>© 2025 Jobber AI Inc. All rights reserved. Designed with ❤️ for career growth.</p>
+      <p>{t('footer.rights')}</p>
       <div class="flex gap-6">
         <span>Google Lighthouse: 100/100</span>
         <span>Made in Silicon Valley</span>

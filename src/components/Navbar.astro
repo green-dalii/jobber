@@ -1,8 +1,13 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const navItems = [
-  { name: 'Features', href: '#features' },
-  { name: 'How it works', href: '#how-it-works' },
-  { name: 'Pricing', href: '/pricing' },
+  { name: t('nav.features'), href: '#features' },
+  { name: t('nav.howItWorks'), href: '#how-it-works' },
+  { name: t('nav.pricing'), href: '/pricing' },
 ];
 ---
 
@@ -37,9 +42,25 @@ const navItems = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
+
+      <!-- Language Switcher -->
+      <div class="relative group">
+        <button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center gap-1">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+          </svg>
+          <span class="text-xs font-bold uppercase">{lang}</span>
+        </button>
+        <div class="absolute right-0 mt-2 w-32 glass-card opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+          <div class="p-2 flex flex-col gap-1">
+            <a href="/" class={`px-3 py-2 rounded-lg text-sm transition-colors ${lang === 'zh' ? 'bg-primary/20 text-primary' : 'hover:bg-white/10'}`}>中文</a>
+            <a href="/en/" class={`px-3 py-2 rounded-lg text-sm transition-colors ${lang === 'en' ? 'bg-primary/20 text-primary' : 'hover:bg-white/10'}`}>English</a>
+          </div>
+        </div>
+      </div>
       
-      <a href="/login" class="text-sm font-medium hover:text-primary transition-colors hidden sm:block">Log in</a>
-      <a href="/get-started" class="btn-primary text-sm">Join Waitlist</a>
+      <a href="/login" class="text-sm font-medium hover:text-primary transition-colors hidden sm:block">{t('nav.login')}</a>
+      <a href="/get-started" class="btn-primary text-sm">{t('nav.joinWaitlist')}</a>
     </div>
   </div>
 </nav>
