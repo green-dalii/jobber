@@ -15,7 +15,7 @@ export const ui = {
         'hero.badge': '求职的未来已来',
         'hero.title.1': '告别海投。',
         'hero.title.2': '精准',
-        'hero.title.3': '拿Offer。',
+        'hero.title.3': '拿Offer',
         'hero.subtitle': '遇见您的个人 AI 职业经纪人。我们不只是帮您找工作；我们为您定制简历、处理内推，并全程指导。今天就让您的面试邀约率提升 10 倍。',
         'hero.cta.start': '获取早期访问权限',
         'hero.cta.explore': '探索功能',

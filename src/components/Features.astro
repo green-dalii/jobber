@@ -45,10 +45,13 @@ const features = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
       {features.map(feature => (
         <FeatureCard {...feature} />
       ))}
     </div>
+
+    <!-- Bottom Gradient Mask -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-gray-50 dark:from-[#050505] to-transparent pointer-events-none z-0"></div>
   </div>
 </section>
