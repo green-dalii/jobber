@@ -31,7 +31,7 @@ const navItems = [
     </div>
 
     <!-- Actions -->
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 md:gap-4">
       <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle Dark Mode">
         <!-- Sun icon -->
         <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +60,7 @@ const navItems = [
       </div>
       
       <a href="/login" class="text-sm font-medium hover:text-primary transition-colors hidden sm:block">{t('nav.login')}</a>
-      <a href="/get-started" class="btn-primary text-sm">{t('nav.joinWaitlist')}</a>
+      <a href="/get-started" class="btn-primary text-xs md:text-sm whitespace-nowrap">{t('nav.joinWaitlist')}</a>
     </div>
   </div>
 </nav>
