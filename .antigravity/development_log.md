@@ -8,6 +8,8 @@ This document tracks all development activities, feature implementations, and co
 - Added custom Tailwind keyframes: `marquee`, `pulse-glow`, and `progress-fill`.
 - Implemented a "Job Feed" marquee and a "Match Analysis" progress interface with 98.4% score visualization.
 - Interactive "Match Found" card with entrance animation.
+- **Visual Polish**: Added `backdrop-blur-xl`, deep shadows, and grid backgrounds for depth.
+- **Accessibility**: Improved text contrast ratios and added `aria-hidden` to decorative elements (Lighthouse optimization).
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
