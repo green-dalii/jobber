@@ -10,6 +10,8 @@ This document tracks all development activities, feature implementations, and co
 - Interactive "Match Found" card with entrance animation.
 - **Visual Polish**: Added `backdrop-blur-xl`, deep shadows, and grid backgrounds for depth.
 - **Accessibility**: Improved text contrast ratios and added `aria-hidden` to decorative elements (Lighthouse optimization).
+- **Footer Redesign**: Switched to brand primary color background, updated company name to "GreenerAI", and fixed mixed-language navigation.
+- **Layout Optimization**: Increased vertical padding (`py-32`) across sections to reduce visual stiffness and improve flow.
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
