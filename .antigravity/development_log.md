@@ -12,6 +12,10 @@ This document tracks all development activities, feature implementations, and co
 - **Accessibility**: Improved text contrast ratios and added `aria-hidden` to decorative elements (Lighthouse optimization).
 - **Footer Redesign**: Switched to brand primary color background, updated company name to "GreenerAI", and fixed mixed-language navigation.
 - **Layout Optimization**: Increased vertical padding (`py-32`) across sections to reduce visual stiffness and improve flow.
+- **Visual Repair**:
+    - Added bottom gradient mask to `Hero` for seamless blending into Features section.
+    - Updated `FeatureCard` hover state to full-card `bg-primary` with contrast text adjustments.
+    - Fixed `CTA` section background clipping by removing `overflow-hidden`.
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
