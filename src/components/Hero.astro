@@ -47,43 +47,58 @@ const t = useTranslations(lang);
     </div>
 
     <!-- Mockup / Visual -->
-    <div class="mt-20 relative animate-slide-up" style="animation-delay: 0.6s;">
-      <div class="mx-auto max-w-5xl glass-card p-2 overflow-hidden shadow-2xl border-white/20 relative group">
+    <div class="mt-20 relative animate-slide-up select-none" style="animation-delay: 0.6s;" aria-hidden="true">
+      <!-- Glow effect behind mockup -->
+      <div class="absolute inset-0 bg-primary/20 blur-3xl -z-10 rounded-[3rem]"></div>
+      
+      <div class="mx-auto max-w-5xl glass-card p-2 overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border-white/40 dark:border-white/10 relative group bg-white/50 dark:bg-black/40 backdrop-blur-xl">
         <!-- Top Bar -->
-        <div class="flex items-center justify-between px-4 py-3 border-b border-white/10 glass-card rounded-none rounded-t-xl mb-1">
-          <div class="flex gap-1.5">
-            <div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/50"></div>
-            <div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200/50 dark:border-white/5 rounded-t-xl mb-1 bg-white/40 dark:bg-white/5">
+          <div class="flex gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
+            <div class="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"></div>
           </div>
-          <div class="text-[10px] text-gray-500 font-mono tracking-widest uppercase flex items-center gap-2">
+          <div class="text-[10px] text-gray-500 dark:text-gray-400 font-mono tracking-widest uppercase flex items-center gap-2 font-bold">
             <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
             Agent Active: v2.4.0
           </div>
         </div>
 
-        <div class="flex flex-col md:flex-row h-[400px] gap-1 bg-black/20">
+        <div class="flex flex-col md:flex-row h-[420px] gap-1 relative">
           <!-- Left: Job Feed Marquee -->
-          <div class="w-full md:w-1/3 border-r border-white/5 relative overflow-hidden hidden md:block">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 pointer-events-none z-10"></div>
-            <div class="flex flex-col gap-2 p-2 animate-marquee">
-              {[...Array(10)].map((_, i) => (
-                <div class="p-3 glass-card border-none bg-white/5 rounded-lg space-y-2 opacity-40 hover:opacity-100 transition-opacity">
-                  <div class="h-3 bg-gray-700/50 rounded w-3/4"></div>
-                  <div class="h-2 bg-gray-800/50 rounded w-1/2"></div>
-                  <div class="flex justify-between items-center">
-                    <div class="h-2 bg-gray-800/50 rounded w-1/4"></div>
-                    <div class="text-[8px] text-primary/40 font-mono">SCANNED</div>
+          <div class="w-full md:w-80 border-r border-gray-200/50 dark:border-white/5 relative overflow-hidden hidden md:block bg-gray-50/50 dark:bg-black/20">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80 dark:from-black/50 dark:via-transparent dark:to-black/50 pointer-events-none z-10"></div>
+            
+            <div class="flex flex-col gap-3 p-3 animate-marquee">
+              {[...Array(8)].map((_, i) => (
+                <div class="p-3 glass-card border border-gray-200/50 dark:border-white/5 bg-white dark:bg-white/5 rounded-xl space-y-2 opacity-50 hover:opacity-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-white/10 flex items-center justify-center text-[10px] font-bold text-gray-400">LOGO</div>
+                    <div class="space-y-1 flex-1">
+                      <div class="h-2.5 bg-gray-300 dark:bg-white/20 rounded w-3/4"></div>
+                      <div class="h-2 bg-gray-200 dark:bg-white/10 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center pt-2 border-t border-gray-100 dark:border-white/5">
+                    <div class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/10 text-[8px] text-gray-500 font-medium">Remote</div>
+                    <div class="text-[8px] text-primary font-bold font-mono tracking-tight">SCANNING...</div>
                   </div>
                 </div>
               ))}
-              {[...Array(10)].map((_, i) => (
-                <div class="p-3 glass-card border-none bg-white/5 rounded-lg space-y-2 opacity-40 hover:opacity-100 transition-opacity">
-                  <div class="h-3 bg-gray-700/50 rounded w-3/4"></div>
-                  <div class="h-2 bg-gray-800/50 rounded w-1/2"></div>
-                  <div class="flex justify-between items-center">
-                    <div class="h-2 bg-gray-800/50 rounded w-1/4"></div>
-                    <div class="text-[8px] text-primary/40 font-mono">SCANNED</div>
+              <!-- Duplicate for seamless loop -->
+              {[...Array(8)].map((_, i) => (
+                <div class="p-3 glass-card border border-gray-200/50 dark:border-white/5 bg-white dark:bg-white/5 rounded-xl space-y-2 opacity-50 hover:opacity-100 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-white/10 flex items-center justify-center text-[10px] font-bold text-gray-400">LOGO</div>
+                    <div class="space-y-1 flex-1">
+                      <div class="h-2.5 bg-gray-300 dark:bg-white/20 rounded w-3/4"></div>
+                      <div class="h-2 bg-gray-200 dark:bg-white/10 rounded w-1/2"></div>
+                    </div>
+                  </div>
+                  <div class="flex justify-between items-center pt-2 border-t border-gray-100 dark:border-white/5">
+                    <div class="px-2 py-0.5 rounded-full bg-gray-100 dark:bg-white/10 text-[8px] text-gray-500 font-medium">Remote</div>
+                    <div class="text-[8px] text-primary font-bold font-mono tracking-tight">SCANNING...</div>
                   </div>
                 </div>
               ))}
@@ -91,53 +106,74 @@ const t = useTranslations(lang);
           </div>
 
           <!-- Center/Right: Detailed Analysis -->
-          <div class="flex-1 p-6 flex flex-col items-center justify-center relative bg-gradient-to-br from-primary/5 to-transparent">
+          <div class="flex-1 p-8 flex flex-col items-center justify-center relative bg-gradient-to-br from-primary/5 via-transparent to-transparent">
             <!-- Brain/Core Icon -->
-            <div class="relative mb-8">
-              <div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full scale-150 animate-pulse-glow"></div>
-              <div class="w-20 h-20 bg-primary rounded-3xl flex items-center justify-center transform rotate-12 shadow-primary/20 shadow-2xl relative z-10">
-                <svg class="w-10 h-10 text-black animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+            <div class="relative mb-10 group/core cursor-pointer">
+              <div class="absolute inset-0 bg-primary/40 blur-[60px] rounded-full scale-150 animate-pulse-glow group-hover/core:bg-primary/60 transition-colors duration-500"></div>
+              
+              <div class="relative z-10 w-24 h-24">
+                <!-- Spinning Ring -->
+                <div class="absolute inset-0 rounded-full border-2 border-primary/30 border-t-primary animate-spin" style="animation-duration: 3s;"></div>
+                <div class="absolute inset-2 rounded-full border-2 border-primary/20 border-b-primary animate-spin" style="animation-duration: 5s; animation-direction: reverse;"></div>
+                
+                <!-- Core -->
+                <div class="absolute inset-0 m-auto w-16 h-16 bg-white dark:bg-[#1a1a1a] rounded-2xl flex items-center justify-center transform group-hover/core:rotate-180 transition-transform duration-700 shadow-xl border border-white/50 dark:border-white/10">
+                  <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
               </div>
             </div>
 
             <!-- Matching Progress -->
-            <div class="w-full max-w-sm space-y-4">
+            <div class="w-full max-w-sm space-y-6 relative z-10">
               <div class="flex justify-between items-end">
                 <div class="space-y-1">
-                  <h4 class="text-xs font-bold font-mono text-gray-400 uppercase tracking-tighter">Analyzing Alignment</h4>
-                  <p class="text-sm font-medium">{t('hero.mockup.agent')}</p>
+                  <h4 class="text-xs font-bold font-mono text-gray-500 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    Analyzing Alignment
+                  </h4>
+                  <p class="text-sm font-semibold text-gray-700 dark:text-gray-200">{t('hero.mockup.agent')}</p>
                 </div>
-                <div class="text-2xl font-black text-primary font-mono tabular-nums animate-pulse">98.4%</div>
+                <div class="text-3xl font-black text-primary font-mono tabular-nums tracking-tighter drop-shadow-sm">98.4%</div>
               </div>
               
-              <div class="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
-                <div class="h-full bg-primary animate-progress-fill shadow-[0_0_15px_rgba(151,221,30,0.5)]"></div>
+              <div class="h-2 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden shadow-inner">
+                <div class="h-full bg-gradient-to-r from-primary to-primary-active animate-progress-fill relative">
+                  <div class="absolute right-0 top-0 bottom-0 w-2 bg-white/50 blur-[2px]"></div>
+                </div>
               </div>
 
               <!-- Recommendation Card -->
-              <div class="mt-8 p-4 glass-card bg-primary/10 border-primary/20 flex gap-4 animate-slide-up" style="animation-delay: 1.5s;">
-                <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                  <div class="w-6 h-6 bg-gray-600 rounded"></div>
-                </div>
-                <div class="flex-1 space-y-2">
-                  <div class="flex justify-between items-start">
-                    <div class="h-3 bg-gray-200 dark:bg-gray-400 rounded w-1/2"></div>
-                    <div class="px-2 py-0.5 rounded bg-primary text-[8px] font-bold text-black uppercase">{t('hero.mockup.match')}</div>
+              <div class="mt-8 p-0 glass-card bg-white dark:bg-[#151515] border-primary/20 animate-slide-up overflow-hidden shadow-xl" style="animation-delay: 1.5s;">
+                <div class="h-1 bg-gradient-to-r from-primary via-white to-primary opacity-50"></div>
+                <div class="p-4 flex gap-4">
+                  <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center shrink-0 border border-white/10 shadow-lg">
+                    <span class="text-xl font-bold text-white">G</span>
                   </div>
-                  <div class="h-2 bg-gray-300 dark:bg-gray-700 rounded w-1/3"></div>
-                  <div class="flex gap-2 pt-2">
-                    <div class="h-4 bg-primary/20 rounded w-16 border border-primary/30"></div>
-                    <div class="h-4 bg-primary/20 rounded w-20 border border-primary/30"></div>
+                  <div class="flex-1 space-y-2">
+                    <div class="flex justify-between items-start">
+                      <div class="space-y-1">
+                         <div class="h-4 bg-gray-800 dark:bg-gray-200 rounded w-32"></div>
+                         <div class="h-3 bg-gray-400/50 rounded w-20"></div>
+                      </div>
+                      <div class="px-2.5 py-1 rounded-lg bg-primary text-[10px] font-black text-black uppercase tracking-wide shadow-sm shadow-primary/20">{t('hero.mockup.match')}</div>
+                    </div>
+                    
+                    <div class="flex gap-2 pt-1">
+                      <div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[9px] font-mono text-gray-500">React</div>
+                      <div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[9px] font-mono text-gray-500">Node.js</div>
+                      <div class="px-2 py-0.5 rounded bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[9px] font-mono text-gray-500">+$180k</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Decoration Lines -->
-            <div class="absolute top-10 left-10 w-20 h-px bg-gradient-to-r from-transparent to-primary/20"></div>
-            <div class="absolute bottom-10 right-10 w-20 h-px bg-gradient-to-l from-transparent to-primary/20"></div>
+            <!-- Background Grid Decoration -->
+            <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" 
+                 style="background-image: linear-gradient(#9ca3af 1px, transparent 1px), linear-gradient(to right, #9ca3af 1px, transparent 1px); background-size: 20px 20px;">
+            </div>
           </div>
         </div>
       </div>
