@@ -16,6 +16,10 @@ This document tracks all development activities, feature implementations, and co
     - Added bottom gradient mask to `Hero` for seamless blending into Features section.
     - Updated `FeatureCard` hover state to full-card `bg-primary` with contrast text adjustments.
     - Fixed `CTA` section background clipping by removing `overflow-hidden`.
+- **Dark Mode Polish**:
+    - Fixed invisible icons in `FeatureCard` by setting explicit dark mode text colors (`dark:text-gray-100`).
+    - Enhanced `CTA` card contrast with lighter background (`gray-900/80`) and improved border visibility.
+    - Resolved Features-to-CTA "color break" with a bottom gradient mask.
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
