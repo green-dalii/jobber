@@ -5,55 +5,58 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="py-12 border-t border-white/10 bg-white dark:bg-[#050505] transition-colors relative h-full">
+<footer class="py-20 bg-primary dark:bg-primary transition-colors relative z-10 text-black">
   <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
       <div class="col-span-1 md:col-span-2">
-        <a href="/" class="flex items-center gap-2 mb-6">
-          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span class="text-black font-bold text-xl">J</span>
+        <a href="/" class="flex items-center gap-2 mb-6 group">
+          <div class="w-10 h-10 bg-black text-primary rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-lg">
+            <span class="font-bold text-2xl">G</span>
           </div>
-          <span class="font-bold text-xl tracking-tight">Jobber.ai</span>
+          <span class="font-bold text-2xl tracking-tight text-black">GreenerAI</span>
         </a>
-        <p class="text-gray-600 dark:text-gray-400 max-w-sm mb-6">
+        <p class="text-black/70 max-w-sm mb-8 font-medium leading-relaxed">
           {t('footer.tagline')}
         </p>
         <div class="flex gap-4">
-          <!-- Social Icons Placeholder -->
-          <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-            <span class="text-xs font-bold">𝕏</span>
-          </div>
-          <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
-            <span class="text-xs font-bold">in</span>
-          </div>
+          <!-- Social Icons -->
+          <a href="#" class="w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center transition-all hover:scale-105 text-black">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+            </svg>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 flex items-center justify-center transition-all hover:scale-105 text-black">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
         </div>
       </div>
       
       <div>
-        <h4 class="font-bold mb-6">{t('footer.product')}</h4>
-        <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="#features" class="hover:text-primary transition-colors">{t('nav.features')}</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Integrations</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">{t('nav.pricing')}</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Changelog</a></li>
+        <h4 class="font-bold mb-6 text-black uppercase tracking-wider text-sm">{t('footer.product')}</h4>
+        <ul class="space-y-4 text-sm font-medium text-black/70">
+          <li><a href="#features" class="hover:text-black transition-colors">{t('nav.features')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.integrations')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('nav.pricing')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.changelog')}</a></li>
         </ul>
       </div>
 
       <div>
-        <h4 class="font-bold mb-6">{t('footer.company')}</h4>
-        <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
-          <li><a href="#" class="hover:text-primary transition-colors">About Us</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Privacy Policy</a></li>
-          <li><a href="#" class="hover:text-primary transition-colors">Terms of Service</a></li>
+        <h4 class="font-bold mb-6 text-black uppercase tracking-wider text-sm">{t('footer.company')}</h4>
+        <ul class="space-y-4 text-sm font-medium text-black/70">
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.about')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.contact')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.privacy')}</a></li>
+          <li><a href="#" class="hover:text-black transition-colors">{t('footer.terms')}</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+    <div class="pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-black/60">
       <p>{t('footer.rights')}</p>
       <div class="flex gap-6">
-        <span>Google Lighthouse: 100/100</span>
         <span>Made in Silicon Valley</span>
       </div>
     </div>
