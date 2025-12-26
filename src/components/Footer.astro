@@ -5,7 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<footer class="py-20 bg-primary dark:bg-primary transition-colors relative z-10 text-black">
+<footer class="pt-20 pb-8 bg-primary dark:bg-primary transition-colors relative z-10 text-black">
   <div class="container mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
       <div class="col-span-1 md:col-span-2">
@@ -56,9 +56,6 @@ const t = useTranslations(lang);
 
     <div class="pt-8 border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-black/60">
       <p>{t('footer.rights')}</p>
-      <div class="flex gap-6">
-        <span>Made in Silicon Valley</span>
-      </div>
     </div>
   </div>
 </footer>

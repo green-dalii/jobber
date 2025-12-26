@@ -8,13 +8,14 @@ const t = useTranslations(lang);
 <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
   <!-- Background Decorations -->
   <div class="absolute inset-0 z-0">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-100 dark:bg-primary-900/30 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-200 dark:bg-primary-800/20 rounded-full blur-[120px] animate-pulse" style="animation-delay: 1s;"></div>
   </div>
 
   <div class="container mx-auto px-6 relative z-10 text-center">
     <!-- Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-dark dark:text-primary font-medium text-sm mb-8 animate-fade-in shadow-sm">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 dark:bg-primary-900/40 border border-primary-200 dark:border-primary-800 text-primary-700 dark:text-primary-300 font-medium text-sm mb-8 animate-fade-in shadow-sm">
       <span class="relative flex h-2 w-2">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -113,8 +114,8 @@ const t = useTranslations(lang);
               
               <div class="relative z-10 w-24 h-24">
                 <!-- Spinning Ring -->
-                <div class="absolute inset-0 rounded-full border-2 border-primary/30 border-t-primary animate-spin" style="animation-duration: 3s;"></div>
-                <div class="absolute inset-2 rounded-full border-2 border-primary/20 border-b-primary animate-spin" style="animation-duration: 5s; animation-direction: reverse;"></div>
+                <div class="absolute inset-0 rounded-full border-2 border-primary-200 dark:border-primary-800/50 border-t-primary animate-spin" style="animation-duration: 3s;"></div>
+                <div class="absolute inset-2 rounded-full border-2 border-primary-100 dark:border-primary-900/50 border-b-primary animate-spin" style="animation-duration: 5s; animation-direction: reverse;"></div>
                 
                 <!-- Core -->
                 <div class="absolute inset-0 m-auto w-16 h-16 bg-white dark:bg-[#1a1a1a] rounded-2xl flex items-center justify-center transform group-hover/core:rotate-180 transition-transform duration-700 shadow-xl border border-white/50 dark:border-white/10">
@@ -139,13 +140,13 @@ const t = useTranslations(lang);
               </div>
               
               <div class="h-2 w-full bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden shadow-inner">
-                <div class="h-full bg-gradient-to-r from-primary to-primary-active animate-progress-fill relative">
+                <div class="h-full bg-gradient-to-r from-primary-400 to-primary-500 animate-progress-fill relative">
                   <div class="absolute right-0 top-0 bottom-0 w-2 bg-white/50 blur-[2px]"></div>
                 </div>
               </div>
 
               <!-- Recommendation Card -->
-              <div class="mt-8 p-0 glass-card bg-white dark:bg-[#151515] border-primary/20 animate-slide-up overflow-hidden shadow-xl" style="animation-delay: 1.5s;">
+              <div class="mt-8 p-0 glass-card bg-white dark:bg-[#151515] border-primary-200 dark:border-primary-800 animate-slide-up overflow-hidden shadow-xl" style="animation-delay: 1.5s;">
                 <div class="h-1 bg-gradient-to-r from-primary via-white to-primary opacity-50"></div>
                 <div class="p-4 flex gap-4">
                   <div class="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center shrink-0 border border-white/10 shadow-lg">

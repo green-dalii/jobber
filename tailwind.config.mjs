@@ -6,8 +6,18 @@ export default {
             colors: {
                 primary: {
                     DEFAULT: '#97dd1e',
-                    active: '#b2f04e',
-                    dark: '#7cb318',
+                    50: '#f4fce8',
+                    100: '#e6f8cc',
+                    200: '#d1f2a0',
+                    300: '#b5ea6d',
+                    400: '#97dd1e',
+                    500: '#78c00f',
+                    600: '#5d9908',
+                    700: '#48780a',
+                    800: '#3b5f0d',
+                    900: '#32500f',
+                    950: '#192c03',
+                    foreground: '#000000',
                 },
                 dark: {
                     bg: '#0a0a0a',

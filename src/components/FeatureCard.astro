@@ -10,11 +10,11 @@ const { title, description, icon, delay = "0" } = Astro.props;
 ---
 
 <div 
-  class="glass-card p-8 group hover:bg-primary transition-all duration-500 animate-slide-up hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/20"
+  class="glass-card p-8 group hover:bg-primary-500 transition-all duration-500 animate-slide-up hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-500/20"
   style={`animation-delay: ${delay}s;`}
 >
-  <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/60 transition-all duration-500 shadow-sm">
-    <div class="group-hover:text-primary text-black dark:text-gray-100 transition-colors duration-500">
+  <div class="w-14 h-14 bg-primary-50 dark:bg-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/60 transition-all duration-500 shadow-sm">
+    <div class="group-hover:text-primary text-black dark:text-white transition-colors duration-500">
       <Fragment set:html={icon} />
     </div>
   </div>
