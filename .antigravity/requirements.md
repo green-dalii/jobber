@@ -6,10 +6,7 @@
 - [x] Premium Design & Theme (#97dd1e)
 - [x] Dark Mode support
 
-## Version 1.1 (i18n & Meta-Tracking)
-- [ ] Establish `.antigravity` tracking folder
-- [ ] Multi-language support (Astro i18n)
-    - [ ] Default language: Chinese (zh)
-    - [ ] Supported language: English (en)
-    - [ ] Implementation of Language Switcher
-- [ ] Git version control initialization
+## Version 1.2 (Hero Animation Upgrade)
+- [x] Design premium Job Matching animation
+- [x] Implement Tailwind keyframes (marquee, pulse, progress)
+- [x] Refactor Hero component mockup for dynamic visual effects

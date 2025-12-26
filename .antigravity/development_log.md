@@ -2,6 +2,13 @@
 
 This document tracks all development activities, feature implementations, and code modifications for Jobber.ai. Use this log to align on progress before starting each session.
 
+## [2025-12-26] - v1.2.0: Hero Animation Upgrade
+### Added
+- Created a premium, multi-stage **Job Matching Animation** in the `Hero` section.
+- Added custom Tailwind keyframes: `marquee`, `pulse-glow`, and `progress-fill`.
+- Implemented a "Job Feed" marquee and a "Match Analysis" progress interface with 98.4% score visualization.
+- Interactive "Match Found" card with entrance animation.
+
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
 - Created `.antigravity/` meta-folder with `blueprint.md`, `architecture.md`, and `requirements.md`.
