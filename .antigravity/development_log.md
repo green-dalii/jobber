@@ -26,6 +26,7 @@ This document tracks all development activities, feature implementations, and co
     - Added `@astrojs/cloudflare` adapter.
     - Created `worker.js` as a static assets proxy.
     - Created `wrangler.jsonc` with `assets` binding configuration to resolve "Missing entry-point" deployment errors.
+    - Fixed "Uploading a Pages _worker.js directory" error by adding public `.assetsignore` and pointing `main` to the Astro-generated worker (`./dist/_worker.js/index.js`).
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
