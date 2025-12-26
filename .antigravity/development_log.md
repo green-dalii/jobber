@@ -20,6 +20,7 @@ This document tracks all development activities, feature implementations, and co
     - Fixed invisible icons in `FeatureCard` by setting explicit dark mode text colors (`dark:text-gray-100`).
     - Enhanced `CTA` card contrast with lighter background (`gray-900/80`) and improved border visibility.
     - Resolved Features-to-CTA "color break" with a bottom gradient mask.
+- **Color System Upgrade**: Refactored `primary` color from single value to full 50-950 scale. Replaced transparency-based depth (e.g., `bg-primary/10`) with solid tokens (e.g., `bg-primary-50`) to eliminate color blending artifacts.
 
 ## [2025-12-25] - v1.1.0: i18n & Meta-Tracking
 ### Added
